@@ -1,0 +1,241 @@
+
+/*INÍCIO REGRAS PÁGINA INICIAL----------------------------------------------*/
+#logo{
+    position: relative;
+    top: 100px;
+    left: 540px;
+}
+#bt_1{
+    position: relative;
+    top: 130px;
+    left: 330px;
+    width: 200px;
+}
+#bt_2{
+    position: relative;
+    top: 180px;
+    left: 129px;
+    width: 200px;
+}
+#bt_3{
+    position: relative;
+    top: 230px;
+    left: -72px;
+    width: 200px;
+}
+/*FIM REGRAS PÁGINA INICIAL-------------------------------------------------*/
+
+
+/*INÍCIO REGRAS LOGIN CARTÃO SUS--------------------------------------------*/
+#lb_cartsus{
+    position: absolute;
+    top: 150px;
+    left: 540px;
+}
+#inp_cartsus{
+    position: absolute;
+    top: 200px;
+    left: 542px;
+    width: 184px;
+    text-align: center;
+}
+#bt_entrar{
+    position: absolute;
+    top: 240px;
+    left: 542px;
+    width: 90px;    
+}
+#bt_voltar{
+    position: absolute;
+    top: 240px;
+    left: 645px;
+    width: 90px;    
+}
+#cartaosus{
+    position: absolute;
+    top:300px;
+    left: 800px;
+}
+/*FIM REGRAS LOGIN CARTÃO SUS-----------------------------------------------*/
+
+
+/*INÍCIO REGRAS USUÁRIO SUS HOME--------------------------------------------*/
+#lkSairUsSus{
+    position: absolute;
+    top:5px;
+    left: 1320px;
+    text-decoration: none;
+}
+#pesqUnidSaud{
+    position: absolute;
+    top:200px;
+    left:480px;
+    width: 440px;
+}
+#pesqHospPorEspec{
+    position: absolute;
+    top:250px;
+    left: 480px;
+    width: 440px;
+}
+#rankUnidSaud{
+    position: absolute;
+    top:300px;
+    left: 480px;
+    width: 440px;
+}
+#favoritos{
+    position: absolute;
+    top:350px;
+    left: 480px;
+    width: 440px;
+}
+/*FIM REGRAS USUÁRIO SUS HOME-----------------------------------------------*/
+
+
+/*INÍCIO REGRAS PESQUISAR UNIDADES DE SAUDE---------------------------------*/
+#lbPesqUnidSaud{
+    position: absolute;
+    top:190px;
+    left:400px;
+}
+#btHosp{
+    position: absolute;
+    top:250px;
+    left:590px;
+    width: 200px;
+}
+#btUpa{
+    position: absolute;
+    top:300px;
+    left:590px;
+    width: 200px;
+}
+#btPostos{
+    position: absolute;
+    top:350px;
+    left:590px;
+    width: 200px;
+}
+#btVoltarPesqUnidSaud{
+    position: absolute;
+    top:400px;
+    left:650px;
+}
+/*FIM REGRAS PESQUISAR UNIDADES DE SAUDE------------------------------------*/
+
+
+/*INÍCIO REGRAS HOSPITAIS---------------------------------------------------*/
+#lbHospitais{
+    position: absolute;
+}
+#tbHospitais{
+    position: absolute;
+    top: 80px;
+    font-size: 25px;
+}
+#btVoltarHosp{
+    position: absolute;
+    left: 180px;
+    top: 25px;    
+}
+#btInfo{
+    width: 130px;
+    height: 30px;
+    font-size: 14px;
+}
+/*FIM REGRAS HOSPITAIS------------------------------------------------------*/
+
+
+/*INÍCIO REGRAS LOGIN GESTOR------------------------------------------------*/
+#lkCadGestor{
+    position: absolute;
+    text-decoration: none;
+    top:5px;
+    left: 1285px;
+}
+#lbLoginGestor{
+    position: absolute;
+    top: 180px;
+    left: 520px;
+    font-size: 50px;
+}
+#formLoginGestor{
+    position: absolute;
+    top: 250px;
+    left: 520px;     
+}
+/*FIM REGRAS LOGIN GESTOR---------------------------------------------------*/
+
+
+/*INÍCIO REGRAS GESTOR HOME-------------------------------------------------*/
+#saudacaoGestor{
+    position: absolute;
+    left:1265px;
+}
+#lkMinhaConta{
+    position: absolute;
+    top:30px;
+    left:1255px;
+    text-decoration: none;
+}
+#lkSairGestor{
+    position: absolute;
+    top:52px;
+    left:1321px;
+    text-decoration: none;
+}
+#tbBotGestorHome{
+    position: absolute;
+    top:250px;
+    left:500px;
+}
+#btTabGestHome{
+    width: 350px;
+}
+/*FIM REGRAS GESTOR HOME----------------------------------------------------*/
+
+
+/*INÍCIO REGRAS CADASTRAR UNIDADE DE SAÚDE----------------------------------*/
+#saudacaoGestor{
+    position: absolute;
+    left:1265px;
+    top:5px;
+}
+#lkMinhaConta{
+    position: absolute;
+    top:30px;
+    left:1255px;
+    text-decoration: none;
+}
+#lkSairGestor{
+    position: absolute;
+    top:52px;
+    left:1321px;
+    text-decoration: none;
+}
+#tbBotGestorCad{
+    position: absolute;
+    top:250px;
+    left:560px;
+    
+}
+#btTabCad{
+    width: 200px;
+}
+#lbCadUnidDeSaud{
+    position: absolute;
+    top: 220px;
+    left: 400px;
+}
+/*FIM REGRAS CADASTRAR UNIDADE DE SAÚDE-------------------------------------*/
+
+
+/*INÍCIO REGRAS CADASTRAR HOSPITAL------------------------------------------*/
+
+
+#fieldset{
+   
+    width: 600px;
+}
+/*FIM REGRAS CADASTRAR HOSPITAL---------------------------------------------*/

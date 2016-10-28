@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Gestor - Cadastrar Hospital</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/main.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="../esus.ico"/>
+    </h:head>
+    <h:body>
+        <p:outputLabel id="saudacaoGestor" value="Olá, Gestor"/>
+        <p:link id="lkMinhaConta" value="Minha Conta" href=""/>
+        <p:link id="lkSairGestor" value="Sair" href="index.xhtml"/>
+        <form action="" method="post">
+            <p:fieldset id="fieldset">
+                <table id="tb1">
+                    <tr><td>Nome</td><td><p:inputText/></td></tr>
+                    <tr><td>CNPJ</td><td><p:inputText/></td></tr>
+                    <tr><td>Endereço</td><td><p:inputText/></td></tr>
+                    <tr><td>Horário de Atendimento</td><td><p:inputText/></td></tr>
+                    <tr><td><h3>Contatos</h3></td><td></td></tr>
+                    <tr><td>Telefone</td><td><p:inputText/></td></tr>
+                    <tr><td>Descrição</td><td><p:inputText/></td></tr>
+                    <tr><td>email</td><td><p:inputText/></td></tr>
+                    <tr><td></td><td><p:button value="Incluir Contato"/></td></tr>
+                </table>
+            </p:fieldset>
+
+            <p:fieldset id="fieldset">    
+                <table  id="tb2">
+                    <tr><td><h3>Internação</h3></td></tr>
+                    <tr><td>Especialidade</td><td><p:inputText/></td></tr>
+                    <tr><td></td><td><p:button value="OK"/></td></tr> 
+                </table>
+            </p:fieldset>
+
+            <p:fieldset id="fieldset">
+                <table  id="tb3">
+                    <tr><td><h3>Ambulatório</h3></td><td></td></tr>
+                    <tr><td>Especialidade</td><td><p:inputText/></td></tr>
+                    <tr><td>Horário</td><td><p:inputText/></td></tr>
+                    <tr><td><h3>Contatos</h3></td><td></td></tr>
+                    <tr><td>Telefone</td><td><p:inputText/></td></tr>
+                    <tr><td>Descrição</td><td><p:inputText/></td></tr>
+                    <tr><td>email</td><td><p:inputText/></td></tr>
+                    <tr><td></td><td><p:button value="Incluir Contato"/></td></tr>
+                    <tr><td>Informações para marcação</td><td><p:inputTextarea/></td></tr>
+                    <tr><td></td><td><p:button value="Incluir Especialidade"/></td></tr>     
+                </table>
+            </p:fieldset>
+
+            <p:fieldset id="fieldset">
+                <table  id="tb4">
+                    <tr><td><h3>Exames</h3></td><td><p:inputText/></td></tr>
+                    <tr><td></td><td><p:button value="OK"/></td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td></td><td></td></tr>
+                </table>
+            </p:fieldset>
+            <input type="submit" value="Cadastrar"/>
+
+
+        </form>
+    </h:body>
+</html>
