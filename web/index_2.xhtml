@@ -6,23 +6,19 @@
       xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>eSUS</title>
- 
 <!--        <link rel="shortcut icon" type="image/x-icon" href="../esus.ico"/>-->
-
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/template.css"/>
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/normalize.css"/>
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/gallery.prefixed.css"/>
-        <link type="text/css" rel="stylesheet" href="#{request.contextPath}/css/gallery.theme.css"/>
+        <h:outputStylesheet library="css" name="template.css" />
+        
+        <h:outputStylesheet library="css" name="normalize.css" />
+        <h:outputStylesheet library="css" name="gallery_prefixed.css" />
+        <h:outputStylesheet library="css" name="gallery_theme.css" />
+        
     </h:head>
     <h:body>
-
-      
-
         <h:panelGroup id="geral">
             <h:panelGroup id="logoESUS">
-                <p:graphicImage id="logo"  url="#{request.contextPath}/image/e-sus.png" alt=""/>
+                <p:graphicImage id="logo" library="image" name="e-sus.png" />
             </h:panelGroup>
-
             <h:panelGroup id="conteudoPrincipal" class="opacidade">
                 <h:panelGroup class="gallery autoplay items-3" style="width: 100%; height: 100%; ">
                     <h:panelGroup id="item-1" class="control-operator"></h:panelGroup>
@@ -31,17 +27,16 @@
 
                     <h:panelGroup class="item">
                         <p> teste de texto no conteudo principal. </p>
-                        <p:graphicImage url="#{request.contextPath}/image/hp_corredor.jpg"/>
+                        <p:graphicImage library="image" name="hp_corredor.jpg"/>
                     </h:panelGroup>
-
                     <h:panelGroup class="item">
                             tipográfica e de impressos, e vem sendo utilizado desde o século XVI,
                             quando um impressor desconhe 
-                        <p:graphicImage url="#{request.contextPath}/image/medico_paciente.jpg" style="width: 100%; height: 100%;"/>
+                        <p:graphicImage library="image" name="medico_paciente.jpg" style="width: 100%; height: 100%;"/>
                     </h:panelGroup>
 
                     <h:panelGroup class="item">
-                        <p:graphicImage url="#{request.contextPath}/image/Médico2.jpg" style="width: 100%; height: 100%;"/>
+                        <p:graphicImage library="image" name="Médico2.jpg" style="width: 100%; height: 100%;"/>
                     </h:panelGroup>
 
                     <h:panelGroup class="controls">

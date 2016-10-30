@@ -1,7 +1,7 @@
 package testes;
 
 import dao.UnidadeDeSaudeDAO;
-import model.UnidadeDeSaude;
+import model.UnidadeDeSaude2;
 
 /**
  *
@@ -16,7 +16,7 @@ public class Main {
         
         System.out.println("Teste insert unidade de saude");
         UnidadeDeSaudeDAO unidadeDeSaudeDao = new UnidadeDeSaudeDAO();
-        UnidadeDeSaude unidadeDeSaude = new UnidadeDeSaude();
+        UnidadeDeSaude2 unidadeDeSaude = new UnidadeDeSaude2();
         
         unidadeDeSaude.setNomeUnidade("Hospital da Mulher");
         unidadeDeSaude.setTipo("Emergencia");

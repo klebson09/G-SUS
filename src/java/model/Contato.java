@@ -43,9 +43,9 @@ public class Contato implements Serializable {
     private String email;
     @JoinColumn(name = "id_contato", referencedColumnName = "idunidade_de_saude", insertable = false, updatable = false)
     @OneToOne(optional = false)
-    private UnidadeDeSaude unidadeDeSaude;
+    private UnidadeDeSaude2 unidadeDeSaude;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "contato1")
-    private UnidadeDeSaude unidadeDeSaude1;
+    private UnidadeDeSaude2 unidadeDeSaude1;
 
     public Contato() {
     }
@@ -78,19 +78,19 @@ public class Contato implements Serializable {
         this.email = email;
     }
 
-    public UnidadeDeSaude getUnidadeDeSaude() {
+    public UnidadeDeSaude2 getUnidadeDeSaude() {
         return unidadeDeSaude;
     }
 
-    public void setUnidadeDeSaude(UnidadeDeSaude unidadeDeSaude) {
+    public void setUnidadeDeSaude(UnidadeDeSaude2 unidadeDeSaude) {
         this.unidadeDeSaude = unidadeDeSaude;
     }
 
-    public UnidadeDeSaude getUnidadeDeSaude1() {
+    public UnidadeDeSaude2 getUnidadeDeSaude1() {
         return unidadeDeSaude1;
     }
 
-    public void setUnidadeDeSaude1(UnidadeDeSaude unidadeDeSaude1) {
+    public void setUnidadeDeSaude1(UnidadeDeSaude2 unidadeDeSaude1) {
         this.unidadeDeSaude1 = unidadeDeSaude1;
     }
 

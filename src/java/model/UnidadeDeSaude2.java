@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "UnidadeDeSaude.findByTipo", query = "SELECT u FROM UnidadeDeSaude u WHERE u.tipo = :tipo"),
     @NamedQuery(name = "UnidadeDeSaude.findByCnpj", query = "SELECT u FROM UnidadeDeSaude u WHERE u.cnpj = :cnpj"),
     @NamedQuery(name = "UnidadeDeSaude.findByInformacao", query = "SELECT u FROM UnidadeDeSaude u WHERE u.informacao = :informacao")})
-public class UnidadeDeSaude implements Serializable {
+public class UnidadeDeSaude2 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -55,14 +55,14 @@ public class UnidadeDeSaude implements Serializable {
     @OneToOne(optional = false)
     private Endereco2 endereco;
 
-    public UnidadeDeSaude() {
+    public UnidadeDeSaude2() {
     }
 
-    public UnidadeDeSaude(Integer idunidadeDeSaude) {
+    public UnidadeDeSaude2(Integer idunidadeDeSaude) {
         this.idunidadeDeSaude = idunidadeDeSaude;
     }
 
-    public UnidadeDeSaude(Integer idunidadeDeSaude, String nomeUnidade, int tipo) {
+    public UnidadeDeSaude2(Integer idunidadeDeSaude, String nomeUnidade, int tipo) {
         this.idunidadeDeSaude = idunidadeDeSaude;
         this.nomeUnidade = nomeUnidade;
         this.tipo = tipo;
@@ -142,10 +142,10 @@ public class UnidadeDeSaude implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof UnidadeDeSaude)) {
+        if (!(object instanceof UnidadeDeSaude2)) {
             return false;
         }
-        UnidadeDeSaude other = (UnidadeDeSaude) object;
+        UnidadeDeSaude2 other = (UnidadeDeSaude2) object;
         if ((this.idunidadeDeSaude == null && other.idunidadeDeSaude != null) || (this.idunidadeDeSaude != null && !this.idunidadeDeSaude.equals(other.idunidadeDeSaude))) {
             return false;
         }

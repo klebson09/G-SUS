@@ -58,7 +58,7 @@ public class Endereco2 implements Serializable {
     @Column(name = "estado")
     private String estado;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "endereco")
-    private UnidadeDeSaude unidadeDeSaude;
+    private UnidadeDeSaude2 unidadeDeSaude;
 
     public Endereco2() {
     }
@@ -132,11 +132,11 @@ public class Endereco2 implements Serializable {
         this.estado = estado;
     }
 
-    public UnidadeDeSaude getUnidadeDeSaude() {
+    public UnidadeDeSaude2 getUnidadeDeSaude() {
         return unidadeDeSaude;
     }
 
-    public void setUnidadeDeSaude(UnidadeDeSaude unidadeDeSaude) {
+    public void setUnidadeDeSaude(UnidadeDeSaude2 unidadeDeSaude) {
         this.unidadeDeSaude = unidadeDeSaude;
     }
 
