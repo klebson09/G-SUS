@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -23,84 +18,41 @@ and open the template in the editor.
                 <h:form>
                     <p:toolbar>
                         <p:toolbarGroup>
-                            <p:commandButton value="Adicionar" action="#{unidadeDeSaudeBean.adicionar()}" update="@form"></p:commandButton>
+                            <p:commandButton value="Adicionar" action="#{UnidadeDeSaudeBean_mb.adicionar()}" update="@form"></p:commandButton>
                         </p:toolbarGroup>
                     </p:toolbar>
                     <p:fieldset legend="Cadastro Unidade De Saúde">
                         <p:panelGrid columns="2">
                             <h:outputLabel   value="Nome da Unidade de Saúde:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.nomeUnidade}"></h:inputText>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.nome}"></h:inputText>
 
                             <h:outputLabel  value="Tipo:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.tipo}"></h:inputText>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.tipo}"></h:inputText>
 
                             <h:outputLabel  value="CNPJ:"></h:outputLabel>
-                            <p:inputMask mask="99.999.999"  value="#{unidadeDeSaudeBean.unidadedesaude.cnpj}"></p:inputMask>
+                            <p:inputMask mask="99.999.999"  value="#{UnidadeDeSaudeBean_mb.cnpj}"></p:inputMask>
 
                             <h:outputLabel  value="Telefone:"></h:outputLabel>
-                            <p:inputMask mask="(99) 9999-9999" value="#{unidadeDeSaudeBean.unidadedesaude.telefone}"></p:inputMask>
+                            <p:inputMask mask="(99) 9999-9999" value="#{UnidadeDeSaudeBean_mb.telefone}"></p:inputMask>
 
                             <h:outputLabel  value="E-mail:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.email}"></h:inputText>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.email}"></h:inputText>
 
                             <h:outputLabel  value="Informação:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.informacao}"></h:inputText>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.informacao}"></h:inputText>
 
                             <h:outputLabel  value="CEP:"></h:outputLabel>
-                            <p:inputMask mask="999999999-99" value="#{unidadeDeSaudeBean.unidadedesaude.cep}"></p:inputMask>
-
-                            <h:outputLabel  value="Logradouro:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.logradouro}"></h:inputText>
+                            <p:inputMask mask="999999-99" onblur="ChecarCEP(this.value)" value="#{UnidadeDeSaudeBean_mb.cep}"></p:inputMask>
 
                             <h:outputLabel  value="Número:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.numero}"></h:inputText>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.numero}"></h:inputText>
+                            
+                            <h:outputLabel  value="Complemento:"></h:outputLabel>
+                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.complemento}"></h:inputText>
 
-                            <h:outputLabel  value="Bairro:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.bairro}"></h:inputText>
-
-                            <h:outputLabel  value="Cidade:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.cidade}"></h:inputText>
-
-                            <h:outputLabel  value="Estado:"></h:outputLabel>
-                            <h:inputText  value="#{unidadeDeSaudeBean.unidadedesaude.estado}"></h:inputText>
                         </p:panelGrid>
 
-                        <!--                essa tabela é provisória só para testes-->
-                        <p:dataTable value="#{unidadeDeSaudeBean.unidades}" var="und">
-                            <p:column headerText="Nome Da Unidade De Saúde">
-                                <h:outputText value="#{und.nomeUnidade}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Tipo">
-                                <h:outputText value="#{und.cnpj}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Telefone">
-                                <h:outputText value="#{und.telefone}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="E-mail">
-                                <h:outputText value="#{und.email}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Informação">
-                                <h:outputText value="#{und.informacao}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="CEP">
-                                <h:outputText value="#{und.cep}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Logradouro">
-                                <h:outputText value="#{und.logradouro}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Número">
-                                <h:outputText value="#{und.numero}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Bairro">
-                                <h:outputText value="#{und.bairro}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Cidade">
-                                <h:outputText value="#{und.cidade}"></h:outputText>
-                            </p:column>
-                            <p:column headerText="Estado">
-                                <h:outputText value="#{und.estado}"></h:outputText>
-                            </p:column>
-                        </p:dataTable>
+               
                     </p:fieldset>
                 </h:form>
             </h:panelGroup> <!-- Fim div conteudoPrincipal -->
