@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import dao.exceptions.IllegalOrphanException;
@@ -18,21 +13,34 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
- *
  * @author klebson
  */
 public class UsuariosJpaController implements Serializable {
 
-    public UsuariosJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
+       protected EntityManager entityManager;
 
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+    public static UsuariosJpaController getInstance() {
+        if (instance == null) {
+            instance = new UnidadeDeSaudeJpaController();
+        }
+        return instance;
     }
+
+    public UsuariosJpaController() {
+        entityManager = getEntityManager();
+    }
+
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PDWPU");
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        return entityManager;
+    }
+
 
     public void create(Usuarios usuarios) {
         if (usuarios.getUnidadeDeSaudeHasUsuariosList() == null) {
