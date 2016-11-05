@@ -29,11 +29,11 @@
 
                             if (!("erro" in dados)) {
                                 //Atualiza os campos com os valores da consulta.
-                                alert(dados.logradouro + " " 
-                                        + dados.bairro + " " 
+                                alert(dados.logradouro + " "
+                                        + dados.bairro + " "
                                         + dados.localidade + ""
                                         + dados.uf);
-                                
+
 //                                $("#rua").val(dados.logradouro);
 //                                $("#bairro").val(dados.bairro);
 //                                $("#cidade").val(dados.localidade);
@@ -53,7 +53,7 @@
                 } //end if.
                 else {
                     //cep sem valor, limpa formulário.
-                    
+
                 }
             }
 
@@ -94,32 +94,38 @@
 
 
                 <p:fieldset legend="Unidades de Saúde" style="margin-bottom: 20px">
-                <!--                essa tabela é provisória só para testes-->
-                <p:dataTable value="#{UnidadeDeSaudeBean_mb.listarUnidadeDeSAude()}" var="und">
-                    <p:column headerText="Nome Da Unidade De Saúde">
-                        <h:outputText value="#{und.nomeUnidade}"></h:outputText>
-                    </p:column>
-                    <p:column headerText="Tipo">
-                        <h:outputText value="#{und.tipo}"></h:outputText>
-                    </p:column>
-                    <p:column headerText="Telefone e Email">
-                        <ui:repeat value="#{und.contatoList}" var="contato">
-                            <h:outputText value="#{contato.telefone}"></h:outputText><br/>
-                            <h:outputText value="#{contato.email}"></h:outputText>
-                            <br/>
-                        </ui:repeat>
-                    </p:column>
-                    <p:column headerText="Informação">
-                        <h:outputText value="#{und.informacao}"></h:outputText>
-                    </p:column>
-                    <p:column headerText="CEP">
-                        <h:outputText value="#{und.cep}"></h:outputText>
-                        <button onclick="checar(#{und.cep})">TESTE</button>
-                    </p:column>
-                    <p:column headerText="Complemento">
-                        <h:outputText value="#{und.complemento}"></h:outputText>
-                    </p:column>
-                </p:dataTable>
+                    <!--                essa tabela é provisória só para testes-->
+                    <p:dataTable value="#{UnidadeDeSaudeBean_mb.listarUnidadeDeSAude()}" var="und">
+                        <p:column headerText="Nome Da Unidade De Saúde">
+                            <h:outputText value="#{und.nomeUnidade}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="Tipo">
+                            <h:outputText value="#{und.tipo}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="Telefone e Email">
+                            <ui:repeat value="#{und.contatoList}" var="contato">
+                                <h:outputText value="#{contato.telefone}"></h:outputText><br/>
+                                <h:outputText value="#{contato.email}"></h:outputText>
+                                <br/>
+                            </ui:repeat>
+                        </p:column>
+                        <p:column headerText="Informação">
+                            <h:outputText value="#{und.informacao}"></h:outputText>
+                        </p:column>
+                        <p:column headerText="CEP">
+                            <h:outputText value="#{und.cep}"></h:outputText>
+                            <button onclick="checar(#{und.cep})">TESTE</button>
+                        </p:column>
+                        <p:column headerText="Complemento">
+                            <h:outputText value="#{und.complemento}"></h:outputText>
+                        </p:column>
+
+
+                        <p:column headerText="">
+                            <p:commandButton type="button" title="Editar" icon="fa-edit" />
+                            <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+                        </p:column>
+                    </p:dataTable>
 
                 </p:fieldset>
             </h:panelGroup> <!-- Fim div conteudoPrincipal -->
