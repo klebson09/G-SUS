@@ -18,37 +18,36 @@
                 <h:form>
                     <p:toolbar>
                         <p:toolbarGroup>
-                            <p:commandButton value="Adicionar" action="#{UnidadeDeSaudeBean_mb.adicionar()}" update="@form"></p:commandButton>
+                            <p:commandButton value="Adicionar" action="#{UsuarioBean_mb.adicionar()}" update="@form"></p:commandButton>
                         </p:toolbarGroup>
                     </p:toolbar>
-                    <p:fieldset legend="Cadastro Unidade De Saúde">
+                    <p:fieldset legend="Cadastro - Gestor">
                         <p:panelGrid columns="2">
                             <h:outputLabel   value="Nome:"></h:outputLabel>
-                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.nome}"></h:inputText>
+                            <h:inputText  value="#{UsuarioBean_mb.nome}"></h:inputText>
 
                             <h:outputLabel  value="Tipo:"></h:outputLabel>
-                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.tipo}"></h:inputText>
+                            <h:inputText  value="#{UsuarioBean_mb.tipo}"></h:inputText>
 
                             <h:outputLabel  value="Código SS:"></h:outputLabel>
-                            <p:inputMask mask="99.999.999"  value="#{UnidadeDeSaudeBean_mb.cnpj}"></p:inputMask>
+                            <p:inputMask mask="999.999"  value="#{UsuarioBean_mb.codigo_ss}"></p:inputMask>
 
                             <h:outputLabel  value="Telefone:"></h:outputLabel>
-                            <p:inputMask mask="(99) 9999-9999" value="#{UnidadeDeSaudeBean_mb.telefone}"></p:inputMask>
+                            <p:inputMask mask="(99) 9999-9999" value="#{UsuarioBean_mb.telefone}"></p:inputMask>
 
                             <h:outputLabel  value="E-mail:"></h:outputLabel>
-                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.email}"></h:inputText>
+                            <h:inputText  value="#{UsuarioBean_mb.email}"></h:inputText>
 
-                            <h:outputLabel  value="Senha:"></h:outputLabel>
-                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.informacao}"></h:inputText>
-                            
-                            <h:outputLabel  value="Repetir Senha:"></h:outputLabel>
-                            <h:inputText  value="#{UnidadeDeSaudeBean_mb.informacao}"></h:inputText>
-                            
 
+                            <h:outputLabel for="pwd1" value="Senha: *" />
+                            <p:password id="pwd1" value="#{UsuarioBean_mb.senha}" match="pwd2" label="Password 1" required="true" />
+
+                            <h:outputLabel for="pwd2" value="Repetir Senha: *" />
+                            <p:password id="pwd2" value="#{UsuarioBean_mb.senha}" label="Password 2" required="true" />
 
                         </p:panelGrid>
 
-               
+
                     </p:fieldset>
                 </h:form>
             </h:panelGroup> <!-- Fim div conteudoPrincipal -->

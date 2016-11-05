@@ -1,8 +1,17 @@
 package beans;
 
+import dao.UsuariosJpaController;
+import entidades.Usuarios;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import java.util.List;
 /**
  * @author klebson
  */
+
+
+@ManagedBean(name = "UsuarioBean_mb")
+@RequestScoped
 public class UsuarioBeans {
     
     
@@ -13,9 +22,31 @@ public class UsuarioBeans {
     String telefone;
     String email;
 
+    private UsuariosJpaController usuarioDAO;
+    
     public UsuarioBeans(){
+        usuarioDAO = new UsuariosJpaController();
+    }
+    
+    public List<Usuarios> listarUsuario(){
+        return usuarioDAO.findUsuariosEntities();
+    }
+    
+    public void adicionar(){
+        Usuarios usr = new Usuarios();
+        usr.setNome(nome);
+        usr.setTipo(tipo);
+        usr.setCodigoSs(codigo_ss);
+        usr.setTelefone(telefone);
+        usr.setEmail(email);
+        usr.setSenha(senha);
+        
+        usuarioDAO.create(usr);
+        
+        System.out.println("Fim do método adicionar ---->>>> adicionado");
         
     }
+    
     
     
     public String getNome() {

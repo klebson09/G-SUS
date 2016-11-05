@@ -2,12 +2,12 @@ package dao;
 
 import dao.exceptions.IllegalOrphanException;
 import dao.exceptions.NonexistentEntityException;
+import entidades.UnidadeDeSaudeHasUsuarios;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import entidades.UnidadeDeSaudeHasUsuarios;
 import entidades.Usuarios;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,13 @@ import javax.persistence.Persistence;
  */
 public class UsuariosJpaController implements Serializable {
 
+    private static UsuariosJpaController instance;
+    
        protected EntityManager entityManager;
 
     public static UsuariosJpaController getInstance() {
         if (instance == null) {
-            instance = new UnidadeDeSaudeJpaController();
+            instance = new UsuariosJpaController();
         }
         return instance;
     }
