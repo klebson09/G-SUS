@@ -2,12 +2,12 @@ package dao;
 
 import dao.exceptions.IllegalOrphanException;
 import dao.exceptions.NonexistentEntityException;
-import entidades.UnidadeDeSaudeHasUsuarios;
 import java.io.Serializable;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import entidades.UnidadeDeSaudeHasUsuarios;
 import entidades.Usuarios;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,13 +16,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
+ *
  * @author klebson
  */
 public class UsuariosJpaController implements Serializable {
 
     private static UsuariosJpaController instance;
-    
-       protected EntityManager entityManager;
+    protected EntityManager entityManager;
 
     public static UsuariosJpaController getInstance() {
         if (instance == null) {
@@ -42,7 +42,6 @@ public class UsuariosJpaController implements Serializable {
         }
         return entityManager;
     }
-
 
     public void create(Usuarios usuarios) {
         if (usuarios.getUnidadeDeSaudeHasUsuariosList() == null) {

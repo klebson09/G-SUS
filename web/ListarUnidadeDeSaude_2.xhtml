@@ -7,7 +7,6 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>eSUS</title>
-        <!--        <link rel="shortcut icon" type="image/x-icon" href="../esus.ico"/>-->
         <h:outputStylesheet library="css" name="template.css" />
 
         <script src="//code.jquery.com/jquery-2.2.2.min.js"></script>
@@ -92,10 +91,11 @@
             </h:panelGroup>
             <h:panelGroup id="conteudoPrincipal" class="opacidade">
 
+                <p:link value="Cadastrar" outcome="CadastrarUnidadeDeSaude_2"/>
 
                 <p:fieldset legend="Unidades de Saúde" style="margin-bottom: 20px">
                     <!--                essa tabela é provisória só para testes-->
-                    <p:dataTable value="#{UnidadeDeSaudeBean_mb.listarUnidadeDeSAude()}" var="und">
+                    <p:dataTable value="#{UnidadeView_mb.unidades}" var="und">
                         <p:column headerText="Nome Da Unidade De Saúde">
                             <h:outputText value="#{und.nomeUnidade}"></h:outputText>
                         </p:column>
@@ -114,7 +114,7 @@
                         </p:column>
                         <p:column headerText="CEP">
                             <h:outputText value="#{und.cep}"></h:outputText>
-                            <button onclick="checar(#{und.cep})">TESTE</button>
+                            <button onclick="checar('#{und.cep}')">TESTE</button>
                         </p:column>
                         <p:column headerText="Complemento">
                             <h:outputText value="#{und.complemento}"></h:outputText>
@@ -122,8 +122,22 @@
 
 
                         <p:column headerText="">
-                            <p:commandButton type="button" title="Editar" icon="fa-edit" />
-                            <p:commandButton type="button" title="Delete" icon="ui-icon-trash" />
+                            <h:form>
+                                <p:commandButton action="#{UnidadeRequest_mb.ExcluirUnidade(und)}" 
+                                                 title="Excluir"
+                                                 icon="ui-icon-trash">
+                                    <p:confirm header="#{mensagem.titulo}" 
+                                               message="Você tem certeza?" 
+                                               icon="ui-icon-alert" />
+                                </p:commandButton>
+
+                                <p:confirmDialog global="true"
+                                                 showEffect="fade" 
+                                                 hideEffect="fade">
+                                    <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                                    <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                                </p:confirmDialog>
+                            </h:form>
                         </p:column>
                     </p:dataTable>
 

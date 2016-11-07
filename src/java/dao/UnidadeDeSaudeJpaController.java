@@ -19,13 +19,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
+ *
  * @author klebson
  */
 public class UnidadeDeSaudeJpaController implements Serializable {
 
-  
- private static UnidadeDeSaudeJpaController instance;
-
+    private static UnidadeDeSaudeJpaController instance;
     protected EntityManager entityManager;
 
     public static UnidadeDeSaudeJpaController getInstance() {

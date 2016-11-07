@@ -19,9 +19,7 @@ import javax.persistence.Persistence;
  */
 public class ContatoJpaController implements Serializable {
 
-  
- private static ContatoJpaController instance;
-
+    private static ContatoJpaController instance;
     protected EntityManager entityManager;
 
     public static ContatoJpaController getInstance() {
@@ -35,9 +33,6 @@ public class ContatoJpaController implements Serializable {
         entityManager = getEntityManager();
     }
 
-    
-    
-    
     private EntityManager getEntityManager() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("PDWPU");
         if (entityManager == null) {
@@ -45,6 +40,7 @@ public class ContatoJpaController implements Serializable {
         }
         return entityManager;
     }
+
     public void create(Contato contato) {
         EntityManager em = null;
         try {
@@ -177,5 +173,5 @@ public class ContatoJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

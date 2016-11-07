@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import dao.exceptions.NonexistentEntityException;
@@ -19,6 +14,7 @@ import entidades.Usuarios;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -26,13 +22,26 @@ import javax.persistence.EntityManagerFactory;
  */
 public class UnidadeDeSaudeHasUsuariosJpaController implements Serializable {
 
-    public UnidadeDeSaudeHasUsuariosJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
+    private static UnidadeDeSaudeHasUsuariosJpaController instance;
+    protected EntityManager entityManager;
 
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+    public static UnidadeDeSaudeHasUsuariosJpaController getInstance() {
+        if (instance == null) {
+            instance = new UnidadeDeSaudeHasUsuariosJpaController();
+        }
+        return instance;
+    }
+
+    public UnidadeDeSaudeHasUsuariosJpaController() {
+        entityManager = getEntityManager();
+    }
+
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PDWPU");
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        return entityManager;
     }
 
     public void create(UnidadeDeSaudeHasUsuarios unidadeDeSaudeHasUsuarios) throws PreexistingEntityException, Exception {

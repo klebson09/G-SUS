@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import dao.exceptions.NonexistentEntityException;
@@ -16,6 +11,7 @@ import entidades.UnidadeDeSaude;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
@@ -23,13 +19,26 @@ import javax.persistence.EntityManagerFactory;
  */
 public class ExamesJpaController implements Serializable {
 
-    public ExamesJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
-    }
-    private EntityManagerFactory emf = null;
+    private static ExamesJpaController instance;
+    protected EntityManager entityManager;
 
-    public EntityManager getEntityManager() {
-        return emf.createEntityManager();
+    public static ExamesJpaController getInstance() {
+        if (instance == null) {
+            instance = new ExamesJpaController();
+        }
+        return instance;
+    }
+
+    public ExamesJpaController() {
+        entityManager = getEntityManager();
+    }
+
+    private EntityManager getEntityManager() {
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PDWPU");
+        if (entityManager == null) {
+            entityManager = factory.createEntityManager();
+        }
+        return entityManager;
     }
 
     public void create(Exames exames) {
