@@ -2,39 +2,41 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>E-SUS</title>
-        <h:outputStylesheet library="css" name="resources/css/template.css" />
+        <h:outputStylesheet library="css" name="template.css" />
         <h:outputStylesheet library="css" name="#{request.contextPath}/resources/css/main.css" />
         <link rel="shortcut icon" type="image/x-icon" href="../esus.ico"/>
     </h:head>
     <h:body>
         <h:panelGroup id="geral">
-            
-            
+
+
             <h:panelGroup id="logoESUS">
                 <p:graphicImage id="logo" library="image" name="e-sus.png" />
             </h:panelGroup>
-            
-            
+
+
             <h:panelGroup id="conteudoPrincipal" class="opacidade">
 
-                <p:galleria value="#{imagesView.images}" var="image" panelWidth="500" panelHeight="313" showCaption="true">
-                    <p:graphicImage name="#{request.contextPath}/resources/image/#{image}" alt="Image Description for #{image}" title="#{image}"/>
+                <p:galleria value="#{ImagesView.image}" var="image" panelWidth="500" panelHeight="313" showCaption="true">
+                    <p:graphicImage name="resources/image/#{image}" alt="Image Description for #{image}" title="#{image}"/>
                 </p:galleria>
 
             </h:panelGroup> <!-- Fim div conteudoPrincipal -->
 
-            
-            
+
+
             <h:panelGroup id="footer">
                 <h1><p:outputLabel id="lb_cartsus" value="Cartão SUS"/></h1>
-                <p:button id="pesqUnidSaud" value="Cadastrar Unidade de Saúde" href="CadastrarUnidadeDeSaude_2.xhtml"/>
+
+                <p:button id="pesqUnidSaud" value="Cadastrar Unidade de Saúde" href="CadastrarUnidadeDeSaude_2.xhtml"  icon="ui-icon-star"/>
                 <p:button id="pesqUnidSaud" value="Home" href="UsuarioSusHome_2.xhtml"/>
             </h:panelGroup><!-- Fim div footer -->
-            
-            
+
+
         </h:panelGroup><!-- Fim div geral -->
     </h:body>
 </html>
