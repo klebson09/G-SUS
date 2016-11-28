@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <p:dock>
+        <p:menuitem value="Home" icon="image/menu/home.png" url="tp_index.xhtml"/>
+        <p:menuitem value="Cadastrar" icon="image/menu/email.png" url="tp_CadastrarGestor.xhtml"/>
+        <p:menuitem value="Listar" icon="image/menu/email.png" url="tp_ListarUnidadeDeSaude.xhtml"/>
+        <p:menuitem rendered="#{empty usuarioLogado ?true : false}" value="Login" icon="image/menu/email.png" url="tp_Login.xhtml"/>
+            <p:menuitem rendered="#{empty usuarioLogado ?false : true}" value="Logout" icon="image/menu/email.png" url="#{Login_mb.logout()}"/>
+    </p:dock>
+
+
+</html>

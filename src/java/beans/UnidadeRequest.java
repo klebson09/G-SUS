@@ -49,7 +49,7 @@ public class UnidadeRequest implements Serializable {
     public UnidadeRequest() {
     }
     
-    @PostConstruct
+    @PostConstruct //gerencia o JSF métodos é criado após a instancia do objeto
     public void init() {
         unidadeDAO = new UnidadeDeSaudeJpaController();
         contatoDAO = new ContatoJpaController();
@@ -65,7 +65,7 @@ public class UnidadeRequest implements Serializable {
         und.setNumero(numero);
         und.setComplemento(complemento);
         
-        unidadeDAO.create(und); //envia und apos criar
+        unidadeDAO.create(und); //envia und apos criar para ser enviado para o dao
 
         Contato cnt = new Contato();
         cnt.setTelefone(telefone);

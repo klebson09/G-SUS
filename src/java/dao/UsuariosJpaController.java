@@ -14,9 +14,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 /**
- *
  * @author klebson
  */
 public class UsuariosJpaController implements Serializable {
@@ -193,6 +191,21 @@ public class UsuariosJpaController implements Serializable {
             return em.find(Usuarios.class, id);
         } finally {
             em.close();
+        }
+    }
+    // verificar login
+    public Usuarios findLogin(String email, String senha) {
+        List<Usuarios> us = null;
+            Usuarios u = null;
+        
+        EntityManager em = getEntityManager();
+        try {
+            us = (List<Usuarios>) em.createNamedQuery("Usuarios.findByLogin").setParameter("email", email).setParameter("senha", senha).getResultList();
+            if(us.size() > 0 )
+            u = us.get(0);
+            return u;
+        } finally {
+//            em.close();
         }
     }
 

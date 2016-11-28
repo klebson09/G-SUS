@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:form>
+        <p:link value="Listar" outcome="ListarUnidadeDeSaude_2"/>
+        <p:fieldset legend="Cadastro Unidade De Saúde">
+            <p:panelGrid columns="2">
+                <h:outputLabel   value="Nome da Unidade de Saúde:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.nome}"></h:inputText>
+
+                <h:outputLabel  value="Tipo:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.tipo}"></h:inputText>
+
+                <h:outputLabel  value="CNPJ:"></h:outputLabel>
+                <p:inputMask mask="99.999.999"  value="#{UnidadeRequest_mb.cnpj}"></p:inputMask>
+
+                <h:outputLabel  value="Telefone:"></h:outputLabel>
+                <p:inputMask mask="(99) 9999-9999" value="#{UnidadeRequest_mb.telefone}"></p:inputMask>
+
+                <h:outputLabel  value="E-mail:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.email}"></h:inputText>
+
+                <h:outputLabel  value="Informação:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.informacao}"></h:inputText>
+
+                <h:outputLabel  value="CEP:"></h:outputLabel>
+                <p:inputMask mask="99999-999" value="#{UnidadeRequest_mb.cep}"></p:inputMask>
+
+                <h:outputLabel  value="Número:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.numero}"></h:inputText>
+
+                <h:outputLabel  value="Complemento:"></h:outputLabel>
+                <h:inputText  value="#{UnidadeRequest_mb.complemento}"></h:inputText>
+            </p:panelGrid>
+        </p:fieldset>
+        <p:commandButton  value="Cadastrar" 
+                          icon="ui-icon-star" 
+                          action="#{UnidadeRequest_mb.adicionar()}">
+        </p:commandButton>
+    </h:form>
+</html>
