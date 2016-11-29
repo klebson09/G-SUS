@@ -12,8 +12,26 @@
     position: fixed;
     z-index: 1;
 }
-.gravar{
-    background-image: url("../image/footer/especialidade.png");
+.unidade{
+    background-image: url(../image/footer/unidade_saude.png) !important;
+    height: 130px;
+    width: 130px;
+    margin-left: 200px;
+}
+.ui-button-icon-left ui-icon ui-c unidade{
+    background: rbg(0,0,0);
+}
+.especialidade{
+    background-image: url(../image/footer/especialidade.png) !important;
+    height: 130px;
+    width: 130px;
+    margin-left: 200px;
+}
+.ranking{
+    background-image: url(../image/footer/ranking.png) !important;
+    height: 130px;
+    width: 130px;
+    margin-left: 200px;
 }
 #logoESUS{
     width: 15%;
@@ -36,8 +54,8 @@
     background: #ff0;
     /*    -moz-border-radius: 0 100% 0 0;
         -webkit-border-radius: 0 100% 0 0;*/
-    
-    
+
+
     transition: all 0.45s ease;
     z-index: 1030;
     position: fixed;
@@ -52,7 +70,7 @@
         -webkit-border-radius: 0 100% 0 0;*/
     border-radius: 0 0 0 40%;
     float: right;
-    
+
 }
 
 

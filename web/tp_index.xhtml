@@ -25,7 +25,6 @@
         </ui:define>
 
         <ui:define name="footer">
-            <h1><p:outputLabel id="lb_cartsus" value="Cartão SUS"/></h1>
             <!--
                             <p:graphicImage height="100" width="100" url="resources/image/img1.jpg" alt="Image Description for #{image}" title="#{image}"/>-->
 
@@ -39,12 +38,20 @@
                                  more menuitems 
                             </p:dock>-->
 
-            <p:commandButton >
- <p:graphicImage url="resources/image/e-sus.png"/>
-            </p:commandButton>
+            <!--            <p:commandButton >
+                            <p:graphicImage value="Unidade De Saúde" url="resources/image/footer/unidade_saude.png" style="width: 120px;"/>
+                            <p:graphicImage url="resources/image/footer/especialidade.png" style="width: 120px;"/>
+                            <p:graphicImage url="resources/image/footer/ranking.png" style="width: 120px;"/>
+                        </p:commandButton>
+            -->
+            <link rel="stylesheet" type="text/css" href="resources/css/template_1.css" />
+            <h:form>
+                <p:commandButton title="Unidades de Saúde" image="unidade" action="tp_ListarUnidadeDeSaude" style=" margin-left: 500px;" /> 
+                <p:commandButton title="Especialidades Médicas" icon="especialidade" actionListener="#{paisBean.gravar}"  style=" margin-left: 100px;"  />
+                <p:commandButton title="Melhores Unidades" icon="ranking" actionListener="#{paisBean.gravar}"  style=" margin-left: 100px;"  />
+            </h:form>
         </ui:define>
     </ui:composition>
-
 
 
 </html>

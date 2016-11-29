@@ -48,6 +48,9 @@ public class LoginBeans implements Serializable{
         return "tp_index.xhtml";//redireção da página
     }
     
+    public String bt_unidade_saude(){
+        return "tp_ListarUnidadeDeSaude.xhtml";
+    }
     public String getEmail() {
         return email;
     }
