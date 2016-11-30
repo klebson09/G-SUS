@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -36,8 +38,11 @@ public class Exames implements Serializable {
     private Integer idExames;
     @Basic(optional = false)
     @Column(name = "nome")
+    @NotNull
     private String nome;
     @Column(name = "descricao")
+    @Max(value=400)
+    @NotNull
     private String descricao;
     @JoinColumn(name = "unidade_de_saude_id_unidade_de_saude", referencedColumnName = "id_unidade_de_saude")
     @ManyToOne(optional = false)

@@ -13,10 +13,10 @@
                 <p:fieldset legend="Cadastro De Exames">
                     <p:panelGrid columns="2">
                         <h:outputLabel   value="Tipo do exame:"></h:outputLabel>
-                        <h:inputText  value="#{UnidadeRequest_mb.nome}"></h:inputText>
+                        <h:inputText  value="#{UnidadeRequest_mb.nome}" required="true" requiredMessage="Informe o nome do exame"></h:inputText>
 
                         <h:outputLabel  value="Descrição"></h:outputLabel>
-                        <h:inputText  value="#{UnidadeRequest_mb.tipo}"></h:inputText>
+                        <h:inputText  value="#{UnidadeRequest_mb.tipo}" required="true" requiredMessage="Descreva o exame"></h:inputText>
 
                     </p:panelGrid>
                 </p:fieldset>

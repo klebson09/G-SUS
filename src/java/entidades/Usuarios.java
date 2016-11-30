@@ -13,8 +13,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.hibernate.validator.constraints.Email;
 
 /**
  *
@@ -45,6 +47,7 @@ public class Usuarios implements Serializable {
     private Integer idUsuarios;
     @Basic(optional = false)
     @Column(name = "nome")
+    @NotNull
     private String nome;
     @Basic(optional = false)
     @Column(name = "tipo")
@@ -52,11 +55,15 @@ public class Usuarios implements Serializable {
     @Basic(optional = false)
     @Column(name = "codigo_ss")
     private String codigoSs;
+    @NotNull
     @Column(name = "senha")
     private String senha;
+    @NotNull
     @Column(name = "telefone")
     private String telefone;
     @Column(name = "email")
+    @NotNull
+    @Email(message = "Email inválido")
     private String email;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarios")
     private List<UnidadeDeSaudeHasUsuarios> unidadeDeSaudeHasUsuariosList;

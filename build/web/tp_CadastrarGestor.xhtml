@@ -10,34 +10,40 @@
         <ui:define name="header">
             <h:form>
 
-                
-                <p:fieldset legend="Cadastro - Gestor">
-                    <p:panelGrid columns="2">
-                        <h:outputLabel   value="Nome:"></h:outputLabel>
-                        <h:inputText  value="#{UsuarioBean_mb.nome}"></h:inputText>
 
-                        <h:outputLabel  value="Tipo:"></h:outputLabel>
-                        <h:inputText  value="#{UsuarioBean_mb.tipo}"></h:inputText>
+                <p:fieldset legend="Cadastro - Gestor">
+                    <p:panelGrid  styleClass="semBorda" columns="3">
+                        <h:outputLabel   value="Nome:"></h:outputLabel>
+                        <h:inputText  id="nome" value="#{UsuarioBean_mb.nome}" required="true" requiredMessage="Informe o nome do usuário"></h:inputText>
+                        <h:message for="nome" style="color: red;display: block"/>
+
+                        <h:outputLabel  id="tipo" value="Tipo:"></h:outputLabel>
+                        <h:inputText  value="#{UsuarioBean_mb.tipo}" required="true" requiredMessage="Informe o tipo do usuário"></h:inputText>
+                        <h:message for="tipo" style="color: red;display: block"/>
 
                         <h:outputLabel  value="Código SS:"></h:outputLabel>
-                        <p:inputMask mask="999.999"  value="#{UsuarioBean_mb.codigo_ss}"></p:inputMask>
+                        <p:inputMask id="cod" mask="999.999"  value="#{UsuarioBean_mb.codigo_ss}" required="true" requiredMessage="Informe seu código SS"></p:inputMask>
+                        <h:message for="cod" style="color: red;display: block"/>
 
                         <h:outputLabel  value="Telefone:"></h:outputLabel>
-                        <p:inputMask mask="(99) 9999-9999" value="#{UsuarioBean_mb.telefone}"></p:inputMask>
+                        <p:inputMask id="tel" mask="(99) 9999-9999" value="#{UsuarioBean_mb.telefone}" required="true" requiredMessage="Informe um telefone"></p:inputMask>
+                        <h:message for="tel" style="color: red;display: block"/>
 
                         <h:outputLabel  value="E-mail:"></h:outputLabel>
-                        <h:inputText  value="#{UsuarioBean_mb.email}"></h:inputText>
-
+                        <h:inputText id="email" value="#{UsuarioBean_mb.email}"></h:inputText>
+                        <h:message for="email" styleClass="error"/>
 
                         <h:outputLabel for="pwd1" value="Senha: *" />
                         <p:password id="pwd1" value="#{UsuarioBean_mb.senha}" match="pwd2" label="Password 1" required="true" />
+                        <h:message for="senha"/>
 
                         <h:outputLabel for="pwd2" value="Repetir Senha: *" />
                         <p:password id="pwd2" value="#{UsuarioBean_mb.senha}" label="Password 2" required="true" />
+                        <h:message for="senha"/>
 
                     </p:panelGrid>
                 </p:fieldset>
-                
+
                 <p:toolbar>
                     <p:toolbarGroup>
                         <p:commandButton value="Adicionar" action="#{UsuarioBean_mb.adicionar()}" update="@form"></p:commandButton>

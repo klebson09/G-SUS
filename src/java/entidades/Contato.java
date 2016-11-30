@@ -12,7 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.hibernate.validator.constraints.Email;
 
 /**
  *
@@ -35,8 +37,10 @@ public class Contato implements Serializable {
     @Column(name = "id_contato")
     private Integer idContato;
     @Column(name = "telefone")
+    @NotNull
     private String telefone;
     @Column(name = "email")
+    @Email(message = "Email inválido!")
     private String email;
     @JoinColumn(name = "unidade_de_saude_idunidade_de_saude", referencedColumnName = "id_unidade_de_saude")
     @ManyToOne(optional = false)

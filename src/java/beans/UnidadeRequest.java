@@ -16,6 +16,9 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 /**
  *
@@ -24,20 +27,31 @@ import javax.servlet.http.HttpServletRequest;
 @ManagedBean(name = "UnidadeRequest_mb")
 @ViewScoped
 public class UnidadeRequest implements Serializable {
-    
+    @NotNull
     String nome;
+    @NotNull
     int tipo;
+    @NotNull
+    @CNPJ(message = "CNPJ inválido!!!")
     String cnpj;
     String informacao;
+    @NotNull
     String telefone;
+    @NotNull
+    @Email(message="Email Inválido")        
     String email;
     String rua;
+    @NotNull
     String cep;
+    @NotNull
     String numero;
     
     String complemento;
+    @NotNull
     String bairro;
+    @NotNull
     String cidade;
+    @NotNull
     String estado;
     
     private UnidadeDeSaudeJpaController unidadeDAO;

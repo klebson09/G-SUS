@@ -8,30 +8,30 @@
     <h:form>
         <p:link value="Listar" outcome="ListarUnidadeDeSaude_2"/>
         <p:fieldset legend="Cadastro Unidade De Saúde">
-            <p:panelGrid columns="2">
+            <p:panelGrid styleClass="semBorda" columns="2">
                 <h:outputLabel   value="Nome da Unidade de Saúde:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.nome}"></h:inputText>
+                <h:inputText  value="#{UnidadeRequest_mb.nome}" required="true" requiredMessage="Informe o nome da unidade"></h:inputText>
 
                 <h:outputLabel  value="Tipo:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.tipo}"></h:inputText>
+                <h:inputText  value="#{UnidadeRequest_mb.tipo}"required="true" requiredMessage="Informe o tipo da unidade"></h:inputText>
 
                 <h:outputLabel  value="CNPJ:"></h:outputLabel>
-                <p:inputMask mask="99.999.999"  value="#{UnidadeRequest_mb.cnpj}"></p:inputMask>
+                <p:inputMask mask="99.999.999"  value="#{UnidadeRequest_mb.cnpj}" required="true" requiredMessage="Informe o CNPJ da unidade"></p:inputMask>
 
                 <h:outputLabel  value="Telefone:"></h:outputLabel>
-                <p:inputMask mask="(99) 9999-9999" value="#{UnidadeRequest_mb.telefone}"></p:inputMask>
+                <p:inputMask mask="(99) 9999-9999" value="#{UnidadeRequest_mb.telefone}" required="true" requiredMessage="Informe o telefone principal da unidade"></p:inputMask>
 
                 <h:outputLabel  value="E-mail:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.email}"></h:inputText>
+                <h:inputText  value="#{UnidadeRequest_mb.email}" required="true" requiredMessage="Informe um email para contato"></h:inputText>
 
                 <h:outputLabel  value="Informação:"></h:outputLabel>
                 <h:inputText  value="#{UnidadeRequest_mb.informacao}"></h:inputText>
 
                 <h:outputLabel  value="CEP:"></h:outputLabel>
-                <p:inputMask mask="99999-999" value="#{UnidadeRequest_mb.cep}"></p:inputMask>
+                <p:inputMask mask="99999-999" value="#{UnidadeRequest_mb.cep}"required="true" requiredMessage="Informe o CEP"></p:inputMask>
 
                 <h:outputLabel  value="Número:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.numero}"></h:inputText>
+                <h:inputText  value="#{UnidadeRequest_mb.numero}" required="true" requiredMessage="Informe o número"></h:inputText>
 
                 <h:outputLabel  value="Complemento:"></h:outputLabel>
                 <h:inputText  value="#{UnidadeRequest_mb.complemento}"></h:inputText>

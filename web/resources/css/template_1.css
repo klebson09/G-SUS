@@ -12,6 +12,18 @@
     position: fixed;
     z-index: 1;
 }
+
+/*Retorna mensagem de validação das annotations Email, CNPJ*/
+.error {
+    color: red;
+    display: block
+}
+
+/*Retira borda do panelGrid*/
+.semBorda tr, .semBorda td {
+	border: none !important;
+}
+
 .unidade{
     background-image: url(../image/footer/unidade_saude.png) !important;
     height: 130px;

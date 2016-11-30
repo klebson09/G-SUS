@@ -8,13 +8,18 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Email;
 /**
  * @author klebson
  */
 @ManagedBean (name = "Login_mb")
 @SessionScoped
 public class LoginBeans implements Serializable{
+    @NotNull
+    @Email(message = "Email inválido")
     String email;
+    @NotNull
     String senha;
     
     

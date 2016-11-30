@@ -14,8 +14,10 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import org.hibernate.validator.constraints.br.CNPJ;
 
 /**
  *
@@ -43,18 +45,23 @@ public class UnidadeDeSaude implements Serializable {
     @Column(name = "id_unidade_de_saude")
     private Integer idUnidadeDeSaude;
     @Basic(optional = false)
+    @NotNull
     @Column(name = "nome_unidade")
     private String nomeUnidade;
     @Basic(optional = false)
     @Column(name = "tipo")
+    @NotNull
     private int tipo;
     @Column(name = "cnpj")
+    @CNPJ
     private String cnpj;
     @Column(name = "informacao")
     private String informacao;
     @Column(name = "cep")
+    @NotNull
     private String cep;
     @Column(name = "numero")
+    @NotNull
     private String numero;
     @Column(name = "complemento")
     private String complemento;

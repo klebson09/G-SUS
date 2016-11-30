@@ -5,6 +5,9 @@ import entidades.Usuarios;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.validation.constraints.NotNull;
+import static org.eclipse.persistence.expressions.ExpressionOperator.notNull;
+import org.hibernate.validator.constraints.Email;
 
 /**
  * @author klebson
@@ -13,11 +16,18 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class UsuarioBeans {
     
-     String nome;
+    @NotNull
+    String nome;
+    @NotNull
     int tipo;
+    @NotNull
     String codigo_ss;
+    @NotNull
     String senha;
+    @NotNull
     String telefone;
+    @NotNull
+    @Email (message = "Email inválido")        
     String email;
 
     private UsuariosJpaController usuarioDAO;
