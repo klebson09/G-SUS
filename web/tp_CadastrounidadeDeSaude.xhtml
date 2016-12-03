@@ -5,41 +5,59 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-    <h:form>
-        <p:link value="Listar" outcome="ListarUnidadeDeSaude_2"/>
-        <p:fieldset legend="Cadastro Unidade De Saúde">
-            <p:panelGrid styleClass="semBorda" columns="2">
-                <h:outputLabel   value="Nome da Unidade de Saúde:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.nome}" required="true" requiredMessage="Informe o nome da unidade"></h:inputText>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="header">
+            <h:form>
+                <!--                <p:link value="Listar" outcome="ListarUnidadeDeSaude_2"/>-->
 
-                <h:outputLabel  value="Tipo:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.tipo}"required="true" requiredMessage="Informe o tipo da unidade"></h:inputText>
+                <p:fieldset legend="Cadastro Unidade De Saúde">
+                    <p:panelGrid styleClass="semBorda" columns="3">
+                        <h:outputLabel   value="Nome da Unidade de Saúde:"></h:outputLabel>
+                        <h:inputText id="nome" value="#{UnidadeRequest_mb.nome}" required="true" requiredMessage="Informe o nome da unidade"></h:inputText>
+                        <h:message for="nome" style="color: red;display: block"/>
 
-                <h:outputLabel  value="CNPJ:"></h:outputLabel>
-                <p:inputMask mask="99.999.999"  value="#{UnidadeRequest_mb.cnpj}" required="true" requiredMessage="Informe o CNPJ da unidade"></p:inputMask>
+                        <h:outputLabel   value="Tipo:"></h:outputLabel>
+                        <h:inputText id="tipo" value="#{UnidadeRequest_mb.tipo}" required="true" requiredMessage="Informe o tipo da unidade"></h:inputText>
+                        <h:message for="tipo" style="color: red;display: block"/>
 
-                <h:outputLabel  value="Telefone:"></h:outputLabel>
-                <p:inputMask mask="(99) 9999-9999" value="#{UnidadeRequest_mb.telefone}" required="true" requiredMessage="Informe o telefone principal da unidade"></p:inputMask>
+                        <h:outputLabel value="CNPJ:"></h:outputLabel>
+                        <p:inputText id="cnpj"  value="#{UnidadeRequest_mb.cnpj}" required="true" requiredMessage="Informe o CNPJ da unidade"></p:inputText>
+                        <h:message for="cnpj" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="Telefone:"></h:outputLabel>
+                        <p:inputMask id="telefone" mask="(99) 9999-9999" value="#{UnidadeRequest_mb.telefone}" required="true" requiredMessage="Informe o telefone principal da unidade"></p:inputMask>
+                        <h:message for="telefone" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="E-mail:"></h:outputLabel>
+                        <h:inputText id="email" value="#{UnidadeRequest_mb.email}" required="true" requiredMessage="Informe um email para contato"></h:inputText>
+                        <h:message for="email" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="Informação:"></h:outputLabel>
+                        <h:inputText id="informacao" value="#{UnidadeRequest_mb.informacao}"></h:inputText>
+                        <h:message for="informacao" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="CEP:"></h:outputLabel>
+                        <p:inputMask id="cep" mask="99999-999" value="#{UnidadeRequest_mb.cep}" required="true" requiredMessage="Informe o CEP"></p:inputMask>
+                        <h:message for="cep" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="Número:"></h:outputLabel>
+                        <h:inputText id="numero" value="#{UnidadeRequest_mb.numero}" required="true" requiredMessage="Informe o número"></h:inputText>
+                        <h:message for="numero" style="color: red;display: block"/>
+                        
+                        <h:outputLabel  value="Complemento:"></h:outputLabel>
+                        <h:inputText id="complemento" value="#{UnidadeRequest_mb.complemento}"></h:inputText>
+                        <h:message for="complemento" style="color: red;display: block"/>
+                    </p:panelGrid>
+                </p:fieldset>
 
-                <h:outputLabel  value="E-mail:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.email}" required="true" requiredMessage="Informe um email para contato"></h:inputText>
+                <p:toolbar>
+                    <p:toolbarGroup>
+                        <p:commandButton  value="Cadastrar Unidade" action="#{UnidadeRequest_mb.adicionar()}" update="@form"></p:commandButton>
+                    </p:toolbarGroup>
+                </p:toolbar>                
+            </h:form>
 
-                <h:outputLabel  value="Informação:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.informacao}"></h:inputText>
+        </ui:define>
+    </ui:composition>
 
-                <h:outputLabel  value="CEP:"></h:outputLabel>
-                <p:inputMask mask="99999-999" value="#{UnidadeRequest_mb.cep}"required="true" requiredMessage="Informe o CEP"></p:inputMask>
-
-                <h:outputLabel  value="Número:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.numero}" required="true" requiredMessage="Informe o número"></h:inputText>
-
-                <h:outputLabel  value="Complemento:"></h:outputLabel>
-                <h:inputText  value="#{UnidadeRequest_mb.complemento}"></h:inputText>
-            </p:panelGrid>
-        </p:fieldset>
-        <p:commandButton  value="Cadastrar" 
-                          icon="ui-icon-star" 
-                          action="#{UnidadeRequest_mb.adicionar()}">
-        </p:commandButton>
-    </h:form>
 </html>

@@ -45,23 +45,18 @@ public class UnidadeDeSaude implements Serializable {
     @Column(name = "id_unidade_de_saude")
     private Integer idUnidadeDeSaude;
     @Basic(optional = false)
-    @NotNull
     @Column(name = "nome_unidade")
     private String nomeUnidade;
     @Basic(optional = false)
     @Column(name = "tipo")
-    @NotNull
     private int tipo;
     @Column(name = "cnpj")
-    @CNPJ
     private String cnpj;
     @Column(name = "informacao")
     private String informacao;
     @Column(name = "cep")
-    @NotNull
     private String cep;
     @Column(name = "numero")
-    @NotNull
     private String numero;
     @Column(name = "complemento")
     private String complemento;

@@ -25,7 +25,7 @@ import org.hibernate.validator.constraints.br.CNPJ;
  * @author klebson
  */
 @ManagedBean(name = "UnidadeRequest_mb")
-@ViewScoped
+@RequestScoped
 public class UnidadeRequest implements Serializable {
     @NotNull
     String nome;

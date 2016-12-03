@@ -2,17 +2,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
-    <p:dock>
-        <p:menuitem value="Home" icon="resources/image/menu/home.png" url="tp_index.xhtml"/>
-        <p:menuitem value="Cadastrar" icon="resources/image/menu/cadastrarUnidade.png" url="tp_CadastrarGestor.xhtml"/>
-        <p:menuitem value="Listar" icon="resources/image/menu/listar.png" url="tp_ListarUnidadeDeSaude.xhtml"/>
-        <p:menuitem value="Cadastrar Gestor" icon="resources/image/menu/gestor.png" url="tp_CadastrarGestor.xhtml"/>
-        <p:menuitem rendered="#{empty usuarioLogado ?true : false}" value="Login" icon="image/menu/email.png" url="tp_Login.xhtml"/>
-            <p:menuitem rendered="#{empty usuarioLogado ?false : true}" value="Logout" icon="image/menu/email.png" url="#{Login_mb.logout()}"/>
-    </p:dock>
-
+    <h:form>
+        <p:dock>
+            <p:menuitem value="Home" icon="resources/image/menu/home.png" url="faces/tp_index.xhtml"/>
+            <p:menuitem value="Cadastrar" icon="resources/image/menu/cadastrarUnidade.png" url="faces/tp_CadastrounidadeDeSaude.xhtml"/>
+            <p:menuitem value="Cadastrar" icon="resources/image/menu/gestor.png" url="faces/tp_CadastrarGestor.xhtml"/>
+            <p:menuitem value="Listar" icon="resources/image/menu/listarUnidade.png" url="faces/tp_ListarUnidadeDeSaude.xhtml"/>
+            <p:menuitem value="Cadastrar Gestor" icon="resources/image/menu/gestor.png" url="faces/tp_CadastrarGestor.xhtml"/>
+            <p:menuitem rendered="#{empty usuarioLogado ?true : false}" value="Login" icon="resources/image/menu/login.png" url="faces/tp_Login.xhtml"/>
+            <p:menuitem rendered="#{empty usuarioLogado ?false : true}" value="Logout" icon="resources/image/menu/login.png" url="#{Login_mb.logout()}"/>
+        </p:dock>
+    </h:form>
 
 </html>
