@@ -19,7 +19,6 @@ import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.validator.constraints.Email;
 
 /**
- *
  * @author klebson
  */
 @Entity

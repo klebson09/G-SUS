@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>eSUS</title>
+        <!--        <h:outputStylesheet library="css" name="template.css" />-->
+
+        <script>
+
+        </script>
+    </h:head>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="header">
+
+            <p:fieldset legend="Lista de Gestores">
+                <p:dataTable value="#{GestorView_mb.usuarios}" var="gst">
+                    <p:column headerText="Gestor">
+                        <h:outputText value="#{gst.nome}"></h:outputText>
+                    </p:column>
+                    <p:column headerText="Tipo">
+                        <h:outputText value="#{gst.tipo}"></h:outputText>
+                    </p:column>
+                    <p:column headerText="Telefone">
+                        <h:outputText value="#{gst.telefone}"></h:outputText>
+                    </p:column>
+
+                    <p:column headerText="E-mail">
+                        <h:outputText value="#{gst.email}"></h:outputText>
+                    </p:column>
+                    <!--                    OBS. IMPLEMENTAR ISSO posteriormente atrelar unidade de saúde ao gestor correspondente-->
+                    <p:column headerText="">
+                        <h:form>
+                            <p:commandButton action="#{UsuarioRequest_mb.ExcluirUsuario(gst)}" 
+                                             title="Excluir"
+                                             icon="ui-icon-trash">
+                                <p:confirm header="#{mensagem.titulo}" 
+                                           message="Você tem certeza?" 
+                                           icon="ui-icon-alert" />
+                            </p:commandButton>
+
+                            <p:confirmDialog global="true"
+                                             showEffect="fade" 
+                                             hideEffect="fade">
+                                <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                            </p:confirmDialog>
+                        </h:form>
+                    </p:column>
+
+                </p:dataTable>
+            </p:fieldset>            
+
+        </ui:define>
+    </ui:composition>
+</html>
+

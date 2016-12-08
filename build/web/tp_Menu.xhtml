@@ -7,10 +7,10 @@
     <h:form>
         <p:dock>
             <p:menuitem value="Home" icon="resources/image/menu/home.png" url="faces/tp_index.xhtml"/>
-            <p:menuitem value="Cadastrar" icon="resources/image/menu/cadastrarUnidade.png" url="faces/tp_CadastrounidadeDeSaude.xhtml"/>
-            <p:menuitem value="Cadastrar" icon="resources/image/menu/gestor.png" url="faces/tp_CadastrarGestor.xhtml"/>
-            <p:menuitem value="Listar" icon="resources/image/menu/listarUnidade.png" url="faces/tp_ListarUnidadeDeSaude.xhtml"/>
+            <p:menuitem value="Cadastrar Unidade" icon="resources/image/menu/cadastrarUnidade.png" url="faces/tp_CadastrounidadeDeSaude.xhtml"/>
+            <p:menuitem value="Listar Unidades" icon="resources/image/menu/listarUnidade.png" url="faces/tp_ListarUnidadeDeSaude.xhtml"/>
             <p:menuitem value="Cadastrar Gestor" icon="resources/image/menu/gestor.png" url="faces/tp_CadastrarGestor.xhtml"/>
+            <p:menuitem value="Listar Gestores" icon="resources/image/menu/gestor.png" url="faces/tp_ListarGestor.xhtml"/>
             <p:menuitem rendered="#{empty usuarioLogado ?true : false}" value="Login" icon="resources/image/menu/login.png" url="faces/tp_Login.xhtml"/>
             <p:menuitem rendered="#{empty usuarioLogado ?false : true}" value="Logout" icon="resources/image/menu/login.png" url="#{Login_mb.logout()}"/>
         </p:dock>
